@@ -1,0 +1,10 @@
+<launch>
+    <node pkg="slam" type="orb_slam.py" name="orb_slam_node" output="screen">
+        <param name="camera_params" value="$(find sensemap)/config/camera_params.yaml"/>
+    </node>
+    <node pkg="detection" type="yolo_detector.py" name="yolo_detector_node" output="screen">
+        <param name="yolo_config" value="$(find sensemap)/config/yolo_config.yaml"/>
+    </node>
+    <node pkg="mapping" type="semantic_map.py" name="semantic_map_node" output="screen"/>
+    <node pkg="utils" type="visualization.py" name="visualization_node" output="screen"/>
+</launch>

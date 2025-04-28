@@ -1,0 +1,10 @@
+opencv-python
+torch
+torchvision
+pcl
+pyyaml
+rosdep
+orb-slam2
+yolov5
+matplotlib
+plotly

@@ -1,0 +1,30 @@
+Sure, here's the content for the file `/sensemap/sensemap/config/yolo_config.yaml`:
+
+model:
+  path: "path/to/yolov5/model.pt"
+  img_size: 640
+  conf_threshold: 0.25
+  iou_threshold: 0.45
+
+classes:
+  - person
+  - chair
+  - table
+  - door
+  - other
+
+device: "cuda"  # or "cpu" for CPU inference
+
+dataloader:
+  batch_size: 16
+  num_workers: 4
+
+training:
+  epochs: 50
+  learning_rate: 0.001
+  weight_decay: 0.0005
+
+logging:
+  log_interval: 10
+  save_model: true
+  save_dir: "path/to/save/models"
