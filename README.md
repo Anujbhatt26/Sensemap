@@ -23,9 +23,18 @@ SenseMap is a smart indoor mapping system designed for robots, utilizing visual 
 - Improved map update rates by 3x through optimized processing techniques.
 
 ## Installation
+Prerequisites
+Install ROS (Noetic recommended)
+Install CUDA Toolkit (if using GPU)
+Install PCL library
+Setup
 To install the required dependencies, run:
 ```
+git clone https://github.com/yourusername/sensemap.git
+cd sensemap
 pip install -r requirements.txt
+catkin_make
+source devel/setup.bash
 ```
 
 ## Usage
@@ -34,8 +43,36 @@ To launch the SenseMap system, use the following command:
 roslaunch sensemap sensemap.launch
 ```
 
+## Project Structure
+```
+sensemap/
+├── config/                 # Configuration files
+│   ├── camera_params.yaml # Camera calibration parameters
+│   └── yolo_config.yaml   # YOLO model configuration
+├── launch/
+│   └── sensemap.launch    # ROS launch configuration
+├── logs/
+│   └── changelog.md       # Project change history
+├── src/
+│   ├── detection/         # Object detection modules
+│   │   ├── object_tracker.py
+│   │   └── yolo_detector.py
+│   ├── mapping/          # Semantic mapping components
+│   │   ├── point_cloud_processor.py
+│   │   └── semantic_map.py
+│   ├── slam/             # SLAM implementation
+│   │   ├── orb_slam.py
+│   │   └── pose_estimation.py
+│   ├── utils/            # Utility functions
+│   │   ├── camera.py
+│   │   └── visualization.py
+│   └── main.py          # Application entry point
+└── tests/               # Unit tests
+    └── test_detector.py
+```
+
 ## Logging
 For tracking changes and updates, refer to the `logs/changelog.md` file.
-
+This project is licensed under the MIT License. See the LICENSE file for details.
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
